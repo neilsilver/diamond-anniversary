@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f4f3ec">
+  <title>Alan &amp; Margaret — 60 Years</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<!-- To add a soundtrack, set data-music="audio/music.mp3" -->
+<body data-music="">
+
+  <main id="stage" aria-label="Photo slideshow">
+    <div class="layer"><img class="bg" alt=""><img class="fg" alt=""></div>
+    <div class="layer"><img class="bg" alt=""><img class="fg" alt=""></div>
+  </main>
+
+  <section id="title" class="card visible">
+    <div class="card-inner">
+      <div class="hand">
+        <img src="branding/alan.png" alt="Alan William, as signed in 1966">
+        <span class="amp">&amp;</span>
+        <img src="branding/margaret.png" alt="Margaret Eileen, as signed in 1966">
+      </div>
+      <p class="names">Alan &amp; Margaret</p>
+      <h1><span class="sixty">60</span><span class="years-word">Years</span></h1>
+      <div class="place">
+        <img src="branding/place-1.png" alt="1966. Marriage solemnized at the Parish Church of Stathern">
+        <img src="branding/place-2.png" alt="in the Parish, in the County of Leicester">
+      </div>
+      <button id="begin" type="button" disabled>Loading…</button>
+    </div>
+  </section>
+
+  <section id="closing" class="card" aria-hidden="true">
+    <div class="card-inner">
+      <h2>Happy Diamond Anniversary</h2>
+      <img class="date-hand" src="branding/date.png" alt="29th day of October 1966, in the original handwriting">
+      <div class="place">
+        <img src="branding/place-1.png" alt="1966. Marriage solemnized at the Parish Church of Stathern">
+        <img src="branding/place-2.png" alt="in the Parish, in the County of Leicester">
+      </div>
+    </div>
+  </section>
+
+  <nav id="controls" aria-label="Slideshow controls">
+    <button id="prev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button id="toggle" type="button" aria-label="Pause">
+      <svg class="icon-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg>
+      <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+    </button>
+    <button id="next" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <button id="fullscreen" type="button" aria-label="Toggle full screen">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+  </nav>
+
+  <div id="progress"><div id="progress-bar"></div></div>
+
+  <script src="js/slideshow.js?v=2"></script>
+</body>
+</html>
