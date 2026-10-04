@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Alan &amp; Margaret — 60 Years (printable card)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* A5 portrait at 96dpi; render at 3.125x for 300dpi print. */
+    html, body { width: 560px; height: 794px; }
+    .card { background-image:
+      radial-gradient(ellipse at center, transparent 55%, rgba(39, 48, 107, 0.07) 100%),
+      url(../branding/certificate-bg.jpg); background-size: auto, cover; background-position: center; }
+    .card-inner { gap: 14px; }
+    .place img { height: 34px; }
+    .qr { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 6px; }
+    .qr img { width: 150px; height: 150px; border: 2px solid var(--green); }
+    .qr p { margin: 0; font-size: 15px; letter-spacing: 0.28em; text-indent: 0.28em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <section class="card visible">
+    <div class="card-inner">
+      <div class="hand">
+        <img src="../branding/alan.png" alt="Alan William">
+        <span class="amp">&amp;</span>
+        <img src="../branding/margaret.png" alt="Margaret Eileen">
+      </div>
+      <p class="names">Alan &amp; Margaret</p>
+      <h1><span class="sixty">60</span><span class="years-word">Years</span></h1>
+      <div class="place">
+        <img src="../branding/place-1.png" alt="1966. Marriage solemnized at the Parish Church of Stathern">
+        <img src="../branding/place-2.png" alt="in the Parish, in the County of Leicester">
+      </div>
+      <div class="qr">
+        <img src="qr.svg" alt="QR code for the slideshow">
+        <p>Scan to watch the slideshow</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
