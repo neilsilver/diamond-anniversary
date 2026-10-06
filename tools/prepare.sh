@@ -23,7 +23,7 @@ LIST="$TMP/list.tsv"
 : > "$LIST"
 
 converted=0
-# Folders named Certificate or starting with "_" are skipped.
+# Folders named Certificate or other, or starting with "_", are skipped.
 while IFS= read -r -d '' f; do
   rel="${f#"$SRC"/}"
   out="$(printf '%s' "$rel" | md5 -q | cut -c1-10).jpg"
@@ -48,7 +48,7 @@ while IFS= read -r -d '' f; do
 done < <(find "$SRC" -type f \
   \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.tif' \
      -o -iname '*.tiff' -o -iname '*.heic' \) \
-  -not -path '*/Certificate/*' -not -path '*/_*' -print0 | sort -z)
+  -not -path '*/Certificate/*' -not -ipath '*/other/*' -not -path '*/_*' -print0 | sort -z)
 
 python3 - "$LIST" "$MANIFEST" "$OUT" <<'PY'
 import json, os, re, sys
