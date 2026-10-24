@@ -46,12 +46,20 @@
 
   const preloaded = new Map();
 
+  // A layer keeps showing its previous photo until the new one has loaded, so
+  // always wait for the load itself: Safari can reject decode() early, and a
+  // layer revealed too soon flashes the photo from two slides back.
+  const loaded = (img) => (img.complete ? Promise.resolve() : new Promise((resolve) => {
+    img.addEventListener('load', resolve, { once: true });
+    img.addEventListener('error', resolve, { once: true });
+  }));
+
   // decode() can stall while the tab is in the background, so never wait on it forever.
   const DECODE_TIMEOUT_MS = 4000;
-  const decoded = (img) => Promise.race([
+  const decoded = (img) => loaded(img).then(() => Promise.race([
     img.decode().catch(() => {}),
     new Promise((resolve) => setTimeout(resolve, DECODE_TIMEOUT_MS)),
-  ]);
+  ]));
 
   function preload(i) {
     const file = photos[i].file;
